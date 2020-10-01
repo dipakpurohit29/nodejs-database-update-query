@@ -1,0 +1,27 @@
+// update query 
+
+var mysql = require('mysql');
+var config = require('./config.js');
+var con = mysql.createConnection(config);
+
+var sql = "update A2 set name = 'manan' where name = 'om'"
+con.query(sql,function(err,result){
+    if(err) throw err;
+    console.log("data updated successfully"); 
+});
+
+con.end();
+
+// how many rows we updated 
+
+var mysql = require('mysql');
+var config = require('./config.js');
+var con = mysql.createConnection(config);
+
+var sql = "update A2 set name = 'om' where name = 'manan'"
+con.query(sql,function(err,result){
+    if(err) 
+    console.log(result.affectedRows +"data updated successfully"); 
+});
+
+con.end();
