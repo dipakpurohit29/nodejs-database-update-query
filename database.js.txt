@@ -20,7 +20,7 @@ var con = mysql.createConnection(config);
 
 var sql = "update A2 set name = 'om' where name = 'manan'"
 con.query(sql,function(err,result){
-    if(err) 
+    if(err) throw err ;
     console.log(result.affectedRows +"data updated successfully"); 
 });
 
